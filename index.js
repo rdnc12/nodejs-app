@@ -7,7 +7,7 @@ function writetext(int1, int2) {
         fs.appendFile('home.txt', int1 + ' ' + int2 + ' ', (err) => {
             if (err) throw err;
             console.log('Saved!');
-        }) 
+        })
     }
 };
 
@@ -42,4 +42,11 @@ mergeFiles('home.txt', 'newhome.txt');
 
 // ====MOMENT.JS FUNCTION====
 
+const moment = require('moment');
 
+function getDay(daycount) {
+
+    console.log('day name:' + moment().add(daycount, 'days').format('dddd'));
+}
+
+getDay(5);
