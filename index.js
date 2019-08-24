@@ -38,3 +38,8 @@ function mergeFiles(file1, file2) {
     });
 }
 mergeFiles('home.txt', 'newhome.txt');
+
+
+// ====MOMENT.JS FUNCTION====
+
+
