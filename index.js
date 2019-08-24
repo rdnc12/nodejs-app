@@ -7,7 +7,7 @@ function writetext(int1, int2) {
         fs.appendFile('home.txt', int1 + ' ' + int2 + ' ', (err) => {
             if (err) throw err;
             console.log('Saved!');
-        })
+        }) 
     }
 };
 
