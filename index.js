@@ -45,8 +45,8 @@ mergeFiles('home.txt', 'newhome.txt');
 const moment = require('moment');
 
 function getDay(daycount) {
-
     console.log('day name:' + moment().add(daycount, 'days').format('dddd'));
 }
 
 getDay(5);
+
