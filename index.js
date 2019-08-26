@@ -30,13 +30,17 @@ printext('../node-appjs/text-files/home.txt');
 // ====MERGE FUNCTION====
 
 function mergeFiles(file1, file2) {
+    function createFile(data) { fs.appendFile('./text-files/merge.txt', data, (err) => {
+        if (err) throw err;
+    })};
 
+    fs.readFile(file1,(err,data)=>{
+        if (err) throw err;
+        createFile(data);
+    })
     fs.readFile(file2, (err, data) => {
         if (err) throw err;
-
-        fs.appendFile(file1, data, (err) => {
-            if (err) throw err;
-        });
+        createFile(data);
     });
 }
 mergeFiles('../node-appjs/text-files/home.txt', '../node-appjs/text-files/newhome.txt');
@@ -50,5 +54,5 @@ function getDay(daycount) {
     console.log('day name:' + moment().add(daycount, 'days').format('dddd'));
 }
 
-getDay(5);
+getDay(3);
 
