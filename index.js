@@ -30,11 +30,13 @@ printext('../node-appjs/text-files/home.txt');
 // ====MERGE FUNCTION====
 
 function mergeFiles(file1, file2) {
-    function createFile(data) { fs.appendFile('./text-files/merge.txt', data, (err) => {
-        if (err) throw err;
-    })};
+    function createFile(data) {
+        fs.appendFile('./text-files/merge.txt', data+ '\n', (err) => {
+            if (err) throw err;
+        })
+    };
 
-    fs.readFile(file1,(err,data)=>{
+    fs.readFile(file1, (err, data) => {
         if (err) throw err;
         createFile(data);
     })
