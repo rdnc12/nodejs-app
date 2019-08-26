@@ -1,10 +1,12 @@
+
+
 const fs = require('fs');
 
 // ====WRITE FUNCTION====
 function writetext(int1, int2) {
 
     if (typeof int1 == 'number' && typeof int2 == 'number') {
-        fs.appendFile('home.txt', int1 + ' ' + int2 + ' ', (err) => {
+        fs.appendFile('../node-appjs/text-files/home.txt', int1 + ' ' + int2 + ' ', (err) => {
             if (err) throw err;
             console.log('Saved!');
         })
@@ -22,7 +24,7 @@ function printext(fileName) {
     });
 }
 
-printext('home.txt');
+printext('../node-appjs/text-files/home.txt');
 
 
 // ====MERGE FUNCTION====
@@ -37,7 +39,7 @@ function mergeFiles(file1, file2) {
         });
     });
 }
-mergeFiles('home.txt', 'newhome.txt');
+mergeFiles('../node-appjs/text-files/home.txt', '../node-appjs/text-files/newhome.txt');
 
 
 // ====MOMENT.JS FUNCTION====
