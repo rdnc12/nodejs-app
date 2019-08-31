@@ -4,13 +4,14 @@ const fs = require('fs');
 
 // ====WRITE FUNCTION====
 function writetext(int1, int2) {
+    for (let i = int1; i <= int2; i++) {
 
-    if (typeof int1 == 'number' && typeof int2 == 'number') {
-        fs.appendFile('../node-appjs/text-files/home.txt', int1 + ' ' + int2 + ' ', (err) => {
+        fs.appendFile('../node-appjs/text-files/home.txt', `${i}\n`, (err) => {
             if (err) throw err;
             console.log('Saved!');
         })
     }
+
 };
 
 writetext(12, 25);
@@ -31,7 +32,7 @@ printext('../node-appjs/text-files/home.txt');
 
 function mergeFiles(file1, file2) {
     function createFile(data) {
-        fs.appendFile('./text-files/merge.txt', data+ '\n', (err) => {
+        fs.appendFile('./text-files/merge.txt', data + '\n', (err) => {
             if (err) throw err;
         })
     };
